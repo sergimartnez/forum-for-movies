@@ -1,0 +1,10 @@
+ <h1> These are the results for your search </h1>
+ <% @movies.each do |movie| %>
+ 	<h3><%= movie.title %></h3>
+ 	<h3><%= movie.description %></h3>
+ 	<h3>Comments:</h3>
+ 	<% movie.comments.each do |comment| %>
+		<h4>*<%= comment.user.username %>*: <%= comment.comment %></h4>
+ 	<% end %>
+ 	<%= link_to	"Go to discussion!", "/movies/#{movie.id}" %>
+ <% end %>

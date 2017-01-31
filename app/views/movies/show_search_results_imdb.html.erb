@@ -1,0 +1,8 @@
+<h1> These are the results for your search </h1>
+<% @movies.each do |movie| %>
+	<h3><%= movie.title %></h3>
+	<br>
+	<h3><%= movie.plot %></h3>
+	<br>
+	<%= link_to	"Start a discussion", "/movies/create?id=#{movie.id}" %>
+<% end %>
